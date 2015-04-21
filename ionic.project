@@ -1,0 +1,12 @@
+{
+  "name": "dosomethingsocial",
+  "app_id": "b3a84d1b",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}
