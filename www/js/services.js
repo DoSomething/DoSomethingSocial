@@ -5,7 +5,7 @@ angular.module('starter.services', [])
     {
       id: 0,
       title: "Some title 0",
-      img: "/img/logo.png",
+      img: "https://dosomething-a.akamaihd.net/sites/default/files/assets/v0.4.88/node_modules/dosomething-neue/dist/assets/images/logo.svg",
       quote: "I did cool things! and things insert more filler text",
       link: "http://www.google.com"
     },
@@ -18,25 +18,25 @@ angular.module('starter.services', [])
     {
       id: 2,
       title: "Some title 2",
-      img: "/img/logo.png",
+      img: "https://dosomething-a.akamaihd.net/sites/default/files/assets/v0.4.88/node_modules/dosomething-neue/dist/assets/images/logo.svg",
       link: "http://www.google.com"
     },
     {
       id: 3,
       title: "Some title 3",
-      img: "/img/logo.png",
+      img: "https://dosomething-a.akamaihd.net/sites/default/files/assets/v0.4.88/node_modules/dosomething-neue/dist/assets/images/logo.svg",
       link: "http://www.google.com"
     },
     {
       id: 4,
       title: "Some title 4",
-      img: "/img/logo.png",
+      img: "https://dosomething-a.akamaihd.net/sites/default/files/assets/v0.4.88/node_modules/dosomething-neue/dist/assets/images/logo.svg",
       link: "http://www.google.com"
     },
     {
       id: 5,
       title: "Some title 5",
-      img: "/img/logo.png",
+      img: "https://dosomething-a.akamaihd.net/sites/default/files/assets/v0.4.88/node_modules/dosomething-neue/dist/assets/images/logo.svg",
       link: "http://www.google.com"
     }
   ];
