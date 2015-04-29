@@ -16,10 +16,26 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!-- External Libs -->
+    <script src="js/tabletop.js"></script>
+
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
+
+    <!-- Used to launch the links inside inapp browser -->
+    <script>
+        document.onclick = function (e) {
+            e = e ||  window.event;
+            var element = e.target || e.srcElement;
+
+            if (element.tagName == 'A') {
+                window.open(element.href, "_system", "location=yes");
+                return false;
+            }
+        };
+    </script>
   </head>
   <body ng-app="starter">
     <!--

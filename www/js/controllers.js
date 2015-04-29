@@ -1,11 +1,21 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Posts) {
-  $scope.posts = Posts.all();
+.controller('DashCtrl', function($scope, $timeout, Posts) {
+  Posts.getPosts().then(
+    function (payload) {
+      console.log(payload);
+      $timeout(function(){
+        $scope.posts = payload;
+      });
+    },
+    function (errorPayload) {
+      console.log(errorPayLoad);
+    });
   $scope.isUndefined = function (thing) {
-    return (typeof thing === "undefined");
-  }
+    return (typeof thing === "undefined") || (typeof thing === "string" && thing != "");
+  };
 })
+
 
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
