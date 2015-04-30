@@ -10,6 +10,19 @@
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
 
+    <!-- Setup StatHat -->
+    <script type="text/javascript">
+            var _StatHat = _StatHat || [];
+            _StatHat.push(['_setUser', 'NDg0MCAIJtIvCk48bPeCQxdLvZZP']);
+            (function() {
+                    var sh = document.createElement('script'); sh.type = 'text/javascript';
+                    sh.async = true;
+                    sh.src = '//www.stathat.com/javascripts/api.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(sh, s);
+            })();
+    </script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -31,6 +44,8 @@
             var element = e.target || e.srcElement;
 
             if (element.tagName == 'A') {
+                _StatHat.push(["_trackCount", "cwt987HOEgE1dO2GJkGhviBVbHJTYg~~", 1.0]);
+                console.log("YES")
                 window.open(element.href, "_system", "location=yes");
                 return false;
             }

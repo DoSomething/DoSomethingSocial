@@ -3,7 +3,6 @@ angular.module('starter.controllers', [])
 .controller('DashCtrl', function($scope, $timeout, Posts) {
   Posts.getPosts().then(
     function (payload) {
-      console.log(payload);
       $timeout(function(){
         $scope.posts = payload;
       });
@@ -12,7 +11,7 @@ angular.module('starter.controllers', [])
       console.log(errorPayLoad);
     });
   $scope.isUndefined = function (thing) {
-    return (typeof thing === "undefined") || (typeof thing === "string" && thing != "");
+    return (typeof thing === "undefined") || (typeof thing === "string" && thing == "");
   };
 })
 
