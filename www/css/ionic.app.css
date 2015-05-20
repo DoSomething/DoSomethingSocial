@@ -7611,7 +7611,8 @@ img {
   background-color: #4e2b63; }
 
 .card {
-  padding-right: 0; }
+  padding-right: 0;
+  display: none; }
   .card a {
     color: #4e2b63;
     text-decoration: none;
@@ -7625,3 +7626,22 @@ img {
     color: #999;
     font-size: 20px;
     border-left: 1px solid #ddd; }
+
+.lockscreen img {
+  width: initial;
+  height: initial;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40%;
+  margin-bottom: 36px; }
+.lockscreen button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px; }
+.lockscreen label {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
