@@ -6,6 +6,7 @@
     <title>DoSomething Social</title>
     <access origin="http://dosomething.org" />
     <access origin="http://akamaihd.net" />
+    <access origin="http://api.dosomething.org" />
 
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -31,6 +32,7 @@
 
     <!-- External Libs -->
     <script src="js/tabletop.js"></script>
+    <script src="js/jquery-2.1.4.min.js"></script>
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
@@ -57,18 +59,50 @@
       <img src="https://dosomething-a.akamaihd.net/sites/default/files/assets/v0.4.110/node_modules/dosomething-neue/dist/assets/images/logo.png" />
       <div class="list">
         <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text">
+          <span class="input-label">Email</span>
+          <input id="login-email" type="text">
         </label>
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password">
+          <input id="login-password"type="password">
         </label>
       </div>
-      <button class="button button-positive">
+      <p id="output"></p>
+      <button id="login-button" class="button button-royal">
         Sign In
       </button>
     </div>
+    <!-- Login Script -->
+    <script>
+      $(document).on('ready', function() {
+        $('#login-button').on('touchstart', function() {
+          var email = $('#login-email').val();
+          var password = $('#login-password').val();
+          var apiUrl = "https://api.dosomething.org/v1/";
+          $.ajax({
+            url: apiUrl + 'login',
+            method: "POST",
+            headers: {
+              "X-DS-REST-API-Key": "qsRnqNhjVYjVlMEAVhalKIgtT1Up1M7DDlroD3xC",
+              "X-DS-Application-Id": "internalsocialapp"
+            },
+            data: {
+              email: email,
+              password: password
+            },
+            success: function(data) {
+              if(data) {
+                $('.lockscreen').css('display', 'none');
+                $('.card').css('display', 'block');
+              }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+              $('#output').text('Error: ' + errorThrown);
+            }
+          })
+        });
+      });
+    </script>
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
